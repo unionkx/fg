@@ -1,6 +1,8 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15-php8
+
 # set version label
 LABEL maintainer="unionkx"
+
 # install filegator
 RUN \
  echo "**** install runtime packages ****" && \
@@ -18,5 +20,6 @@ RUN \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/*
+
 # add local files
 COPY root/ /
