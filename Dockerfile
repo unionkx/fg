@@ -1,13 +1,6 @@
 FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.15-php8
-
 # set version label
-ARG DOCKER_HUB_USER
-ARG IMAGE_BUILD_DATE
-ARG IMAGE_VERSION
-ARG FILEGATOR_RELEASE
-LABEL build_version="${DOCKER_HUB_USER} version:- ${IMAGE_VERSION} Build-date:- ${IMAGE_BUILD_DATE}"
-LABEL maintainer="${DOCKER_HUB_USER}"
-
+LABEL maintainer="unionkx"
 # install filegator
 RUN \
  echo "**** install runtime packages ****" && \
@@ -25,6 +18,5 @@ RUN \
  echo "**** cleanup ****" && \
  rm -rf \
 	/tmp/*
-
 # add local files
 COPY root/ /
