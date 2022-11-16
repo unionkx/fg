@@ -32,9 +32,9 @@ server {
 
 	location ~ \.php$ {
 		fastcgi_split_path_info ^(.+\.php)(/.+)$;
-		# With php8.0-cgi alone:
+		# With php8.1-cgi alone:
 		fastcgi_pass 127.0.0.1:9000;
-		# With php8.0-fpm:
+		# With php8.1-fpm:
 		#fastcgi_pass unix:/var/run/php8.0-fpm.sock;
 		fastcgi_index index.php;
 		include /etc/nginx/fastcgi_params;
