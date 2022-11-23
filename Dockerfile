@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:3.16
+FROM amd64/alpine:latest
 
 # set version label
 LABEL maintainer="unionkx"
