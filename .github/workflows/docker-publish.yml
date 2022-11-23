@@ -3,7 +3,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: '58 2 * * *'
+    - cron: '58 2 * * 2'
   push:
     branches: [ "master" ]
     tags: [ 'v*.*.*' ]
