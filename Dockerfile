@@ -3,7 +3,6 @@ LABEL maintainer="unionkx"
 RUN apk add --no-cache bash unzip curl patch tar tzdata xz ca-certificates apache2-utils git logrotate nano nginx openssl \
     php82 php82-fileinfo php82-fpm php82-mbstring php82-openssl php82-session php82-json php82-simplexml php82-xml php82-xmlwriter php82-zlib \
     php82-ctype php82-curl php82-pdo_pgsql php82-pdo_sqlite php82-tokenizer php82-zip && \
-      echo "**** configure nginx ****" && \
   echo "**** configure nginx ****" && \
   echo 'fastcgi_param  HTTP_PROXY         ""; # https://httpoxy.org/' >> \
     /etc/nginx/fastcgi_params && \
@@ -26,7 +25,6 @@ RUN apk add --no-cache bash unzip curl patch tar tzdata xz ca-certificates apach
     /etc/logrotate.conf && \
   sed -i 's#/usr/sbin/logrotate /etc/logrotate.conf#/usr/sbin/logrotate /etc/logrotate.conf -s /config/log/logrotate.status#g' \
     /etc/periodic/daily/logrotate
-
     curl -o  filegator.zip -L "https://github.com/filegator/filegator/releases/download/v7.8.3/filegator_v7.8.3.zip" && \
     rm -rf /tmp/*
 COPY root/ /
